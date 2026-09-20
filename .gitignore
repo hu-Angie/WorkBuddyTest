@@ -1,0 +1,8 @@
+# WorkBuddy 工作空间数据（记忆、本地配置），不纳入版本控制
+.workbuddy/
+
+# 若将来在根目录新增子项目，同样忽略依赖与运行时数据
+node_modules/
+data/
+*.log
+.DS_Store
