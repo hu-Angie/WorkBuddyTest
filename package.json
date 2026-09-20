@@ -1,0 +1,13 @@
+{
+  "name": "team-board",
+  "version": "1.0.0",
+  "description": "实时协作工作台 - 任务看板 + 即时消息",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "ws": "^8.18.0"
+  }
+}

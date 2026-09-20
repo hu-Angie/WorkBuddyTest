@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>实时协作工作台</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">TB</span>
+    <div class="brand-text">
+      <h1>实时协作工作台</h1>
+      <p>任务看板 + 即时消息</p>
+    </div>
+  </div>
+  <div class="members">
+    <div class="avatars" id="avatars"></div>
+    <span class="online-count" id="onlineCount">在线 0</span>
+    <button class="me-btn" id="meBtn" title="点击修改昵称">未设置</button>
+  </div>
+</header>
+
+<main class="layout">
+  <section class="board" id="board">
+    <div class="column" data-status="todo">
+      <div class="col-head">
+        <h2>待办</h2>
+        <span class="count" data-count="todo">0</span>
+      </div>
+      <div class="cards" data-drop="todo"></div>
+      <form class="quick-add hidden" data-status="todo">
+        <input type="text" placeholder="任务标题，回车创建" maxlength="60" autocomplete="off">
+      </form>
+      <button class="add-btn" data-status="todo">+ 添加任务</button>
+    </div>
+
+    <div class="column" data-status="doing">
+      <div class="col-head">
+        <h2>进行中</h2>
+        <span class="count" data-count="doing">0</span>
+      </div>
+      <div class="cards" data-drop="doing"></div>
+      <form class="quick-add hidden" data-status="doing">
+        <input type="text" placeholder="任务标题，回车创建" maxlength="60" autocomplete="off">
+      </form>
+      <button class="add-btn" data-status="doing">+ 添加任务</button>
+    </div>
+
+    <div class="column" data-status="done">
+      <div class="col-head">
+        <h2>已完成</h2>
+        <span class="count" data-count="done">0</span>
+      </div>
+      <div class="cards" data-drop="done"></div>
+      <form class="quick-add hidden" data-status="done">
+        <input type="text" placeholder="任务标题，回车创建" maxlength="60" autocomplete="off">
+      </form>
+      <button class="add-btn" data-status="done">+ 添加任务</button>
+    </div>
+  </section>
+
+  <aside class="stream">
+    <div class="stream-head">
+      <h2>实时活动流</h2>
+      <span class="dot" id="connDot" title="连接状态"></span>
+    </div>
+    <ul class="stream-list" id="streamList"></ul>
+  </aside>
+</main>
+
+<div class="overlay hidden" id="overlay">
+  <div class="panel" id="panel"></div>
+</div>
+
+<div class="overlay" id="nameOverlay">
+  <div class="name-card">
+    <h2>先给自己起个昵称</h2>
+    <p>同事会在活动流和 @提醒里看到这个名字</p>
+    <input id="nameInput" type="text" placeholder="例如：小明" maxlength="20" autocomplete="off">
+    <button id="nameSubmit">进入工作台</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

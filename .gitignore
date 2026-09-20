@@ -1,0 +1,13 @@
+# 依赖
+node_modules/
+
+# 运行时数据（任务与评论，含个人隐私内容）
+data/
+
+# WorkBuddy 工作空间数据（含记忆与本地配置）
+.workbuddy/
+
+# 杂项
+*.log
+.DS_Store
+Thumbs.db
